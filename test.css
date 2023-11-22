@@ -1,0 +1,37 @@
+:root {
+  --transition: all 0.5s ease-in-out;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(3, 250px);
+  gap: 20px;
+}
+.grid-item {
+  position: relative;
+  overflow: hidden;
+}
+.grid-item img {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.grid-item.variant-1 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+.grid-item.variant-2 {
+    grid-row: 2 / 4;
+}
+.grid-item.variant-3 {
+    grid-column: 3 / -1;
+}
